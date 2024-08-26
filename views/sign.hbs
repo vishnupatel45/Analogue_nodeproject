@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container w-25 border border-2 border-dark p-2 mt-4 rounded rounded-3">
+    <h2 class="mt-5">Register</h2>
+    <form method="POST" action="/users" class="mt-4">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="male" name="gender" value="Male" required>
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="female" name="gender" value="Female" required>
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="other" name="gender" value="Other" required>
+          <label class="form-check-label" for="other">Other</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+          required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
