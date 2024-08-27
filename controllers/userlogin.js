@@ -1,5 +1,6 @@
 const { User } = require('../models/user');
 const jwt = require('jsonwebtoken');
+const code = 'vishnu*12'
 
 const renderLogin = (req, res) => {
     res.render('login');
@@ -16,7 +17,7 @@ const handleLogin = async (req, res) => {
         if (user.Password !== password) {
             return res.status(400).send('Incorrect password');
         }
-        const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, code || process.env.JWT_SECRET, { expiresIn: '1h' });
         res.cookie('token', token, { httpOnly: true });
         res.redirect('/users');
     } catch (error) {
